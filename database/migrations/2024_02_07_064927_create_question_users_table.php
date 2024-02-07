@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('question_users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
             $table->foreignId('question_id')->constrained();
             $table->text('answer');
+            $table->integer('skor');
             $table->timestamps();
         });
     }
